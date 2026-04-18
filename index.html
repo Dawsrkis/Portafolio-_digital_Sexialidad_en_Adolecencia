@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sexualidad en la Adolescencia — Portafolio Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:       #0F6E56;
+  --teal-l:     #1D9E75;
+  --teal-pale:  #E1F5EE;
+  --teal-dark:  #085041;
+  --teal-ink:   #0d3d2e;
+  --amber:      #BA7517;
+  --amber-pale: #FAEEDA;
+  --coral:      #C84B28;
+  --coral-pale: #FAECE7;
+  --blue:       #1565A0;
+  --blue-pale:  #E3F0FB;
+  --ink:        #1A1612;
+  --ink-mid:    #3D3530;
+  --ink-muted:  #7A6F68;
+  --cream:      #FDFAF5;
+  --rule:       #E2D9D0;
+  --white:      #ffffff;
+  --mint:       #5DCAA5;
+  --nav-h:      60px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Crimson Pro',Georgia,serif;
+  font-size:18px;line-height:1.78;
+  color:var(--ink);background:var(--cream);
+  overflow-x:hidden;
+}
+
+/* ── NAVBAR ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:var(--nav-h);
+  background:rgba(8,80,65,0.97);
+  backdrop-filter:blur(14px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+  box-shadow:0 1px 0 rgba(255,255,255,0.06);
+}
+.nav-logo{
+  font-family:'DM Sans',sans-serif;
+  font-size:.88rem;font-weight:600;
+  color:#fff;text-decoration:none;
+  letter-spacing:.01em;
+}
+.nav-logo span{color:var(--mint);font-weight:300}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{
+  font-family:'DM Sans',sans-serif;
+  font-size:.72rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--mint)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;place-items:center;
+  padding:calc(var(--nav-h)+4rem) 2rem 5rem;
+  background:var(--teal-ink);
+  position:relative;overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=75') center/cover no-repeat;
+  opacity:.18;
+}
+.hero-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(8,61,46,.92) 0%,rgba(13,61,46,.78) 50%,rgba(30,80,60,.65) 100%);
+}
+.hero-glow1{
+  position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(29,158,117,.2) 0%,transparent 70%);
+  top:-160px;right:-160px;animation:pulse 9s ease-in-out infinite;
+}
+.hero-glow2{
+  position:absolute;width:450px;height:450px;border-radius:50%;
+  background:radial-gradient(circle,rgba(186,117,23,.12) 0%,transparent 70%);
+  bottom:-80px;left:3%;animation:pulse 11s ease-in-out infinite reverse;
+}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:820px;text-align:center;
+}
+.hero-tag{
+  display:inline-block;
+  font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mint);
+  border:1px solid rgba(93,202,165,.4);
+  padding:6px 20px;border-radius:100px;
+  margin-bottom:2rem;
+  animation:fadeUp .7s ease both;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.6rem,7vw,4.8rem);
+  font-weight:900;line-height:1.07;
+  color:#fff;margin-bottom:1.5rem;
+  animation:fadeUp .85s .08s ease both;
+}
+.hero h1 em{color:var(--mint);font-style:italic}
+.hero-sub{
+  font-family:'Crimson Pro',serif;
+  font-size:1.15rem;color:rgba(255,255,255,.6);
+  max-width:540px;margin:0 auto 2.8rem;
+  animation:fadeUp 1s .18s ease both;
+}
+.hero-team{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  animation:fadeUp 1s .3s ease both;
+}
+.hero-team span{
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.82);padding:6px 16px;border-radius:100px;
+}
+.hero-cta{
+  margin-top:3.5rem;animation:fadeUp 1s .45s ease both;
+}
+.hero-cta a{
+  font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mint);text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.bounce{display:inline-block;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTION BASES ── */
+section{padding:6rem 2rem}
+.wrap{max-width:880px;margin:0 auto}
+.sec-label{
+  font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.5rem;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,2.7rem);
+  font-weight:700;line-height:1.18;
+  color:var(--ink);margin-bottom:1.4rem;
+}
+.sec-rule{width:44px;height:3px;background:var(--teal);border-radius:2px;margin-bottom:2rem}
+.prose p{font-size:1.03rem;color:var(--ink-mid);margin-bottom:1rem}
+.prose p:last-child{margin-bottom:0}
+
+/* ── INTRO ── */
+#intro{background:#fff}
+.intro-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:start;margin-top:1.5rem;
+}
+.intro-quote{
+  border-left:3px solid var(--teal);padding-left:1.4rem;
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.2rem;color:var(--teal);line-height:1.5;
+  margin-bottom:1.6rem;
+}
+.purpose-box{
+  background:var(--teal-pale);border-radius:14px;padding:1.6rem;margin-bottom:1rem;
+}
+.purpose-box h3{
+  font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;
+  color:var(--teal);margin-bottom:.6rem;
+}
+.purpose-box p{font-size:.95rem;color:var(--teal-dark);line-height:1.65}
+.warn-box{
+  background:var(--amber-pale);border-radius:14px;padding:1.6rem;
+}
+.warn-box h3{
+  font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;
+  color:var(--amber);margin-bottom:.6rem;
+}
+.warn-box p{font-size:.95rem;color:#4a3000;line-height:1.65}
+
+/* ── PROBLEMÁTICAS ── */
+#problematicas{background:var(--cream)}
+.prob-card{
+  background:#fff;border-radius:20px;overflow:hidden;
+  margin-bottom:3.5rem;
+  box-shadow:0 2px 28px rgba(0,0,0,0.06);
+}
+.prob-card-header{
+  display:flex;align-items:center;gap:1.2rem;
+  padding:1.4rem 2rem 1.2rem;
+  border-bottom:1px solid var(--rule);
+}
+.prob-num{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;font-weight:900;line-height:1;
+  flex-shrink:0;
+}
+.prob-meta{}
+.prob-badge{
+  font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:100px;margin-bottom:.35rem;
+  display:inline-block;
+}
+.prob-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.45rem;font-weight:700;color:var(--ink);line-height:1.2;
+}
+.prob-body{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2rem;padding:1.8rem 2rem;
+}
+.prob-img{
+  border-radius:12px;overflow:hidden;height:200px;
+  position:relative;flex-shrink:0;
+}
+.prob-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.prob-img-overlay{
+  position:absolute;inset:0;
+  display:flex;align-items:flex-end;padding:1rem;
+}
+.prob-img-caption{
+  font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:500;
+  color:rgba(255,255,255,.85);letter-spacing:.05em;
+}
+.prob-text p{font-size:.98rem;color:var(--ink-mid);margin-bottom:.9rem;line-height:1.72}
+.prob-text p:last-child{margin-bottom:0}
+.prob-example{
+  grid-column:1/-1;
+  background:#f8f7f4;border-radius:0 8px 8px 0;
+  padding:1rem 1.3rem;
+  margin:-0.5rem 2rem 1.8rem;
+}
+.prob-example-label{
+  font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink-muted);margin-bottom:.45rem;
+}
+.prob-example p{font-size:.92rem;color:var(--ink-mid);line-height:1.65}
+
+/* color variants */
+.card-teal .prob-num{color:var(--teal-pale)}
+.card-teal .prob-card-header{border-top:4px solid var(--teal)}
+.card-teal .prob-badge{background:var(--teal-pale);color:var(--teal)}
+.card-teal .prob-example{border-left:3px solid var(--teal)}
+
+.card-blue .prob-num{color:var(--blue-pale)}
+.card-blue .prob-card-header{border-top:4px solid var(--blue)}
+.card-blue .prob-badge{background:var(--blue-pale);color:var(--blue)}
+.card-blue .prob-example{border-left:3px solid var(--blue)}
+
+.card-coral .prob-num{color:var(--coral-pale)}
+.card-coral .prob-card-header{border-top:4px solid var(--coral)}
+.card-coral .prob-badge{background:var(--coral-pale);color:var(--coral)}
+.card-coral .prob-example{border-left:3px solid var(--coral)}
+
+/* ── TEORÍA ── */
+#teoria{background:var(--ink);padding:6rem 2rem}
+#teoria .sec-label{color:var(--mint)}
+#teoria .sec-title{color:#fff}
+#teoria .sec-rule{background:var(--mint)}
+.theory-intro{font-size:1rem;color:rgba(255,255,255,.55);margin-bottom:2.5rem;max-width:600px}
+.theory-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.2rem;margin-bottom:2.8rem;
+}
+.theory-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:14px;padding:1.4rem;
+  transition:background .25s;
+}
+.theory-card:hover{background:rgba(255,255,255,.09)}
+.theory-author{
+  font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mint);margin-bottom:.4rem;
+}
+.theory-concept{
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;
+  color:#fff;line-height:1.3;margin-bottom:.7rem;
+}
+.theory-desc{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.6}
+
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.tab-btn{
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;
+  padding:7px 18px;border-radius:100px;cursor:pointer;
+  border:1px solid rgba(255,255,255,.2);
+  background:transparent;color:rgba(255,255,255,.55);
+  transition:all .2s;
+}
+.tab-btn.active{background:var(--teal);border-color:var(--teal);color:#fff}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.refl-block{
+  background:rgba(93,202,165,.07);
+  border:1px solid rgba(93,202,165,.22);
+  border-radius:14px;padding:1.8rem 2rem;
+}
+.refl-title{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.05rem;color:var(--mint);margin-bottom:1rem;
+}
+.refl-block p{font-size:.97rem;color:rgba(255,255,255,.72);margin-bottom:.8rem;line-height:1.72}
+.refl-block p:last-child{margin-bottom:0}
+
+/* ── INTERVENCIÓN ── */
+#intervencion{background:#fff}
+.int-intro{font-size:1rem;color:var(--ink-mid);max-width:660px;margin-bottom:2.5rem;line-height:1.7}
+.int-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.4rem;
+}
+.int-card{
+  border:1px solid var(--rule);border-radius:16px;
+  padding:1.7rem;background:#fff;
+  transition:box-shadow .2s,transform .2s;
+}
+.int-card:hover{box-shadow:0 10px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+.int-icon{
+  width:46px;height:46px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:1.1rem;
+}
+.int-teal .int-icon{background:var(--teal-pale)}
+.int-amber .int-icon{background:var(--amber-pale)}
+.int-coral .int-icon{background:var(--coral-pale)}
+.int-blue  .int-icon{background:var(--blue-pale)}
+.int-card h3{
+  font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:700;
+  color:var(--ink);margin-bottom:.9rem;
+}
+.int-list{list-style:none}
+.int-list li{
+  font-size:.92rem;color:var(--ink-mid);
+  padding:.45rem 0;border-bottom:1px solid var(--rule);
+  display:flex;align-items:flex-start;gap:9px;line-height:1.55;
+}
+.int-list li:last-child{border-bottom:none}
+.int-list li::before{
+  content:'';display:block;flex-shrink:0;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--teal);margin-top:7px;
+}
+
+/* ── CONCLUSIÓN ── */
+#conclusion{
+  background:linear-gradient(140deg,var(--teal-pale) 0%,#fff 55%);
+}
+.concl-box{
+  background:#fff;border-radius:24px;
+  padding:3rem 3.2rem;max-width:730px;margin:0 auto;
+  box-shadow:0 6px 48px rgba(15,110,86,.1);
+}
+.concl-box h2{
+  font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;
+  color:var(--teal);margin-bottom:1.5rem;
+}
+.concl-box p{font-size:1rem;color:var(--ink-mid);margin-bottom:.95rem;line-height:1.72}
+.concl-em{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.05rem;color:var(--teal);
+  border-left:3px solid var(--teal);padding-left:1.2rem;
+  margin-top:1.2rem;line-height:1.55;
+}
+.team-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:2rem}
+.team-chip{
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;
+  background:var(--teal-pale);color:var(--teal);
+  padding:6px 16px;border-radius:100px;
+}
+
+/* ── REFERENCIAS ── */
+#referencias{background:#f5f2ed}
+.ref-list{list-style:none}
+.ref-list li{
+  font-size:.96rem;color:var(--ink-mid);
+  padding:1rem 0 1rem 2rem;
+  border-bottom:1px solid var(--rule);
+  position:relative;line-height:1.6;
+}
+.ref-list li::before{
+  content:'';position:absolute;left:0;top:1.55rem;
+  width:10px;height:2px;background:var(--teal);
+}
+.ref-list li:last-child{border-bottom:none}
+.ref-author{font-weight:600;color:var(--ink)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,.4);
+  text-align:center;padding:2.8rem 2rem;
+  font-family:'DM Sans',sans-serif;font-size:.78rem;
+  letter-spacing:.04em;line-height:2.2;
+}
+footer strong{color:rgba(255,255,255,.72)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:720px){
+  nav{padding:0 1.2rem}
+  .nav-links{display:none}
+  section{padding:4rem 1.2rem}
+  .intro-grid{grid-template-columns:1fr;gap:2rem}
+  .prob-body{grid-template-columns:1fr}
+  .prob-img{height:170px}
+  .prob-example{margin:0 1rem 1.5rem}
+  .concl-box{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="#hero">Sexualidad en la <span>Adolescencia</span></a>
+  <ul class="nav-links">
+    <li><a href="#intro">Introducción</a></li>
+    <li><a href="#problematicas">Problemáticas</a></li>
+    <li><a href="#teoria">Teoría</a></li>
+    <li><a href="#intervencion">Intervención</a></li>
+    <li><a href="#conclusion">Conclusión</a></li>
+    <li><a href="#referencias">Referencias</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Portafolio Digital · Psicología del Desarrollo Adolescente</div>
+    <h1>Sexualidad en la<br>Adolescencia:<br><em>Decisiones, Riesgos</em><br>y Orientación Consciente</h1>
+    <p class="hero-sub">Un análisis crítico fundamentado en las teorías del desarrollo humano, con propuestas concretas para el contexto educativo.</p>
+    <div class="hero-team">
+      <span>Dawarkis Peralta Feliz</span>
+      <span>Tomily Quezada</span>
+      <span>José Freilys</span>
+      <span>Reynito Encarnación</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#intro">Explorar el portafolio <span class="bounce">↓</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 01 INTRODUCCIÓN -->
+<section id="intro">
+  <div class="wrap">
+    <div class="sec-label">01 — Presentación e Introducción</div>
+    <h2 class="sec-title">Hablar de sexualidad<br>es hablar de desarrollo</h2>
+    <div class="sec-rule"></div>
+
+    <div class="intro-grid reveal">
+      <div>
+        <blockquote class="intro-quote">
+          "La educación sexual no es una amenaza para los jóvenes. La ignorancia sí lo es."
+        </blockquote>
+        <div class="prose">
+          <p>La adolescencia es la etapa en que los jóvenes pasan por cambios profundos: en su cuerpo, en su manera de pensar y en cómo se relacionan con el mundo que los rodea. En medio de todo ese proceso, la sexualidad aparece como una parte completamente natural del desarrollo humano, y sin embargo, con demasiada frecuencia se convierte en un tema que se evita o se aborda mal.</p>
+          <p>Hoy, los adolescentes tienen acceso a muchísima información sobre sexualidad, principalmente a través de redes sociales, internet y sus grupos de amigos. El problema no es la cantidad de información que reciben, sino la calidad de esa información: gran parte es incorrecta, distorsionada o directamente engañosa, y eso tiene consecuencias reales en sus decisiones.</p>
+          <p>Por eso, problemáticas como el embarazo en la adolescencia, la desinformación sexual y las enfermedades de transmisión sexual no son solo estadísticas: son el resultado de jóvenes que navegaron solos en un tema donde nadie los guió bien.</p>
+        </div>
+      </div>
+      <div>
+        <div class="purpose-box">
+          <h3>📌 Propósito del Portafolio</h3>
+          <p>Este portafolio busca analizar de forma crítica y fundamentada las principales problemáticas que rodean la sexualidad en la adolescencia, relacionarlas con las teorías más importantes del desarrollo humano y proponer acciones educativas concretas que puedan implementarse en la escuela.</p>
+        </div>
+        <div class="warn-box" style="margin-top:1rem">
+          <h3>⚠️ Justificación</h3>
+          <p>La desinformación sobre sexualidad tiene consecuencias directas en la salud, el bienestar y el proyecto de vida de los adolescentes. Abordar este tema desde la escuela no es opcional: es una responsabilidad educativa y ética que no puede seguir siendo ignorada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PROBLEMÁTICAS -->
+<section id="problematicas">
+  <div class="wrap">
+    <div class="sec-label">02 — Descripción de Problemáticas</div>
+    <h2 class="sec-title">Tres realidades que<br>no podemos ignorar</h2>
+    <div class="sec-rule"></div>
+
+    <!-- CARD 1: EMBARAZO -->
+    <div class="prob-card card-blue reveal">
+      <div class="prob-card-header">
+        <div class="prob-num" style="color:#DBEDFB">01</div>
+        <div class="prob-meta">
+          <div class="prob-badge">Salud Reproductiva</div>
+          <div class="prob-title">Embarazo en la Adolescencia</div>
+        </div>
+      </div>
+      <div class="prob-body">
+        <div class="prob-img">
+          <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80"
+               alt="Jóvenes en contexto educativo"
+               onerror="this.parentElement.style.background='#E3F0FB';this.style.display='none'">
+          <div class="prob-img-overlay" style="background:linear-gradient(to top,rgba(21,101,160,.7),transparent)">
+            <span class="prob-img-caption">Orientación y acompañamiento</span>
+          </div>
+        </div>
+        <div class="prob-text">
+          <p>El embarazo adolescente ocurre cuando una joven queda embarazada en una etapa en que su desarrollo físico, emocional y económico todavía no está completo. Más allá de los números, detrás de cada caso hay una historia de desinformación, falta de acompañamiento o decisiones tomadas sin las herramientas necesarias para medir sus consecuencias.</p>
+          <p>Este fenómeno no puede analizarse solo desde la biología. Tiene raíces profundas en la dinámica familiar, la calidad de la educación sexual recibida —o no recibida—, el nivel socioeconómico y las presiones del entorno social. Cuando una adolescente enfrenta un embarazo, su proyecto de vida se transforma de forma drástica y muchas veces irreversible.</p>
+          <p>Muchas veces esto ocurre simplemente porque nadie habló del tema con claridad, sin juicios y a tiempo.</p>
+        </div>
+      </div>
+      <div class="prob-example" style="border-color:var(--blue)">
+        <div class="prob-example-label">📍 Manifestaciones en el contexto real</div>
+        <p>Abandono escolar para asumir responsabilidades parentales antes de tiempo; dificultades económicas que cierran puertas en el proyecto de vida; sentimientos de culpa, vergüenza o aislamiento social tanto en la adolescente como en la pareja involucrada; cambios bruscos en la dinámica familiar que afectan a todos los miembros del hogar.</p>
+      </div>
+    </div>
+
+    <!-- CARD 2: EDUCACIÓN SEXUAL -->
+    <div class="prob-card card-teal reveal">
+      <div class="prob-card-header">
+        <div class="prob-num" style="color:#C8EDE4">02</div>
+        <div class="prob-meta">
+          <div class="prob-badge">Desinformación</div>
+          <div class="prob-title">Falta de Educación Sexual</div>
+        </div>
+      </div>
+      <div class="prob-body">
+        <div class="prob-text">
+          <p>La ausencia de educación sexual de calidad es, quizás, la raíz de todos los demás problemas. Cuando ni la familia ni la escuela abordan el tema con claridad, los adolescentes llenan ese vacío con lo que encuentran en internet, en redes sociales o en conversaciones con amigos que tampoco fueron orientados correctamente.</p>
+          <p>La educación sexual no se trata solo de hablar sobre anticonceptivos. Comprende el conocimiento del propio cuerpo, el respeto, el consentimiento, las emociones en las relaciones afectivas, los derechos sexuales y reproductivos, y —algo fundamental— la capacidad de tomar decisiones propias sin ceder a presiones externas.</p>
+          <p>Cuando esa formación no llega, los adolescentes deciden igual. Solo que lo hacen solos, con información incompleta, y eso tiene un costo muy alto.</p>
+        </div>
+        <div class="prob-img">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80"
+               alt="Jóvenes en aula"
+               onerror="this.parentElement.style.background='#E1F5EE';this.style.display='none'">
+          <div class="prob-img-overlay" style="background:linear-gradient(to top,rgba(8,80,65,.7),transparent)">
+            <span class="prob-img-caption">Educación como herramienta</span>
+          </div>
+        </div>
+      </div>
+      <div class="prob-example" style="border-color:var(--teal)">
+        <div class="prob-example-label">📍 Manifestaciones en el contexto real</div>
+        <p>Jóvenes que creen mitos sobre anticoncepción; ausencia de conversaciones reales sobre consentimiento; presión de pareja sin herramientas para decir que no; búsqueda de respuestas en fuentes no confiables; vergüenza o miedo para consultar dudas con adultos de confianza en la familia o la escuela.</p>
+      </div>
+    </div>
+
+    <!-- CARD 3: ETS -->
+    <div class="prob-card card-coral reveal">
+      <div class="prob-card-header">
+        <div class="prob-num" style="color:#FAE0D8">03</div>
+        <div class="prob-meta">
+          <div class="prob-badge">Salud Sexual</div>
+          <div class="prob-title">Enfermedades de Transmisión Sexual (ETS)</div>
+        </div>
+      </div>
+      <div class="prob-body">
+        <div class="prob-img">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80"
+               alt="Salud y prevención"
+               onerror="this.parentElement.style.background:'#FAECE7';this.style.display='none'">
+          <div class="prob-img-overlay" style="background:linear-gradient(to top,rgba(200,75,40,.7),transparent)">
+            <span class="prob-img-caption">Prevención y cuidado</span>
+          </div>
+        </div>
+        <div class="prob-text">
+          <p>Las enfermedades de transmisión sexual afectan a personas de cualquier edad, pero los adolescentes son especialmente vulnerables. La combinación de inicio temprano de la vida sexual, desconocimiento sobre métodos de protección y la presión del entorno crea un escenario de riesgo que se puede prevenir con información y orientación adecuada.</p>
+          <p>Lo que agrava el problema no es solo la exposición al riesgo, sino el silencio que rodea al tema. El miedo al juicio, la vergüenza de consultar y la falta de acceso a servicios de salud confidenciales hacen que muchos adolescentes no busquen atención aunque noten que algo no está bien. Y cuando no se actúa a tiempo, las consecuencias en la salud pueden ser serias y duraderas.</p>
+        </div>
+      </div>
+      <div class="prob-example" style="border-color:var(--coral)">
+        <div class="prob-example-label">📍 Manifestaciones en el contexto real</div>
+        <p>Relaciones sexuales sin protección por desconocimiento o ceder a la presión de pareja; diagnóstico tardío por miedo o vergüenza de acudir al médico; estigma social que impide hablar abiertamente del tema; confusión sobre síntomas por falta de información médica básica y accesible para los jóvenes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 TEORÍA -->
+<section id="teoria">
+  <div class="wrap">
+    <div class="sec-label">03 — Reflexión Teórica Fundamentada</div>
+    <h2 class="sec-title">Lo que dicen los<br>grandes teóricos</h2>
+    <div class="sec-rule"></div>
+    <p class="theory-intro">Cuatro perspectivas del desarrollo humano que nos ayudan a entender por qué los adolescentes actúan como lo hacen ante la sexualidad, y qué necesitan para tomar mejores decisiones.</p>
+
+    <div class="theory-cards reveal">
+      <div class="theory-card">
+        <div class="theory-author">Erik Erikson</div>
+        <div class="theory-concept">Identidad vs. Confusión de Roles</div>
+        <div class="theory-desc">La adolescencia es el momento en que los jóvenes buscan construir su identidad. Enfrentar un embarazo no planificado o una ETS en esa etapa puede interrumpir violentamente ese proceso de autodescubrimiento y dejar secuelas emocionales profundas.</div>
+      </div>
+      <div class="theory-card">
+        <div class="theory-author">Albert Bandura</div>
+        <div class="theory-concept">Aprendizaje Social y Modelado</div>
+        <div class="theory-desc">Los adolescentes aprenden observando a otros. Lo que ven en redes sociales, series y en su grupo de pares forma su modelo de comportamiento sexual, muchas veces sin ningún filtro crítico ni contrapeso de una figura adulta confiable.</div>
+      </div>
+      <div class="theory-card">
+        <div class="theory-author">Lawrence Kohlberg</div>
+        <div class="theory-concept">Desarrollo Moral y Aprobación Social</div>
+        <div class="theory-desc">En esta etapa, muchas decisiones se toman buscando la aceptación del grupo. El adolescente puede saber que algo implica un riesgo, pero teme más el rechazo social que las consecuencias reales de esa decisión para su salud o su vida.</div>
+      </div>
+      <div class="theory-card">
+        <div class="theory-author">Jean Piaget</div>
+        <div class="theory-concept">Pensamiento Formal y Abstracto</div>
+        <div class="theory-desc">El adolescente ya tiene las herramientas cognitivas para analizar consecuencias y razonar de forma abstracta. Pero esas herramientas son inútiles si la información que recibe es falsa o incompleta. Sin datos reales, el razonamiento lleva a conclusiones equivocadas.</div>
+      </div>
+    </div>
+
+    <!-- Tabs de reflexión -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('r1',this)">Embarazo Adolescente</button>
+      <button class="tab-btn" onclick="showTab('r2',this)">Educación Sexual</button>
+      <button class="tab-btn" onclick="showTab('r3',this)">Enfermedades de Transmisión Sexual</button>
+    </div>
+
+    <div id="r1" class="tab-panel active">
+      <div class="refl-block">
+        <div class="refl-title">Reflexión: Embarazo en la Adolescencia</div>
+        <p>Desde la teoría de Erikson, un embarazo no planificado en la adolescencia representa mucho más que un cambio biológico: interrumpe el proceso de construcción de identidad en su momento más crítico. El joven, que aún intenta responder "¿quién soy?", se enfrenta de golpe a preguntas para las que nadie lo preparó y responsabilidades que trascienden su etapa de desarrollo.</p>
+        <p>Bandura añade que cuando el entorno no ofrece modelos responsables de sexualidad, los adolescentes imitan lo que ven sin analizar si es apropiado para su situación real. Si la figura adulta no habla del tema, la pantalla sí lo hace, y generalmente no de la manera más responsable.</p>
+        <p>Como grupo, consideramos que este problema no surge de la irresponsabilidad de los jóvenes. Surge de la ausencia de orientación real, oportuna y sin juicios. Cuando la escuela y la familia evitan el tema, el adolescente queda solo frente a decisiones que pueden afectar el resto de su vida.</p>
+      </div>
+    </div>
+    <div id="r2" class="tab-panel">
+      <div class="refl-block">
+        <div class="refl-title">Reflexión: Falta de Educación Sexual</div>
+        <p>Piaget nos recuerda que el adolescente ya tiene las capacidades cognitivas para analizar consecuencias y tomar decisiones complejas. Pero esas capacidades se aplican sobre la información que el joven posee. Si esa información es incorrecta o está llena de mitos, el razonamiento más sofisticado llevará igualmente a conclusiones equivocadas.</p>
+        <p>Bandura complementa esta visión al señalar que, en ausencia de referentes confiables en la familia o la escuela, los adolescentes imitan lo que observan en su entorno, especialmente en redes sociales y medios digitales. Eso no los convierte en irresponsables: los convierte en personas que aprendieron de lo que tuvieron disponible.</p>
+        <p>Creemos firmemente que la educación sexual no es un tema incómodo: es una herramienta de protección. Hablar de ella con claridad, respeto y sin tabúes no expone a los jóvenes, los protege. Negar ese espacio educativo es abandonarlos frente a decisiones que no deberían enfrentar solos.</p>
+      </div>
+    </div>
+    <div id="r3" class="tab-panel">
+      <div class="refl-block">
+        <div class="refl-title">Reflexión: Enfermedades de Transmisión Sexual</div>
+        <p>Kohlberg explica que muchas conductas de riesgo en la adolescencia no son producto del desconocimiento puro, sino de la presión del grupo. El joven puede conocer el riesgo pero teme más el rechazo social que las consecuencias para su salud. Eso nos dice que el problema no se resuelve solo con información: requiere también fortalecer la autoestima y la capacidad de tomar decisiones propias sin ceder a la presión.</p>
+        <p>Erikson añade que un diagnóstico de ETS en la adolescencia puede generar una crisis de identidad grave, cargada de vergüenza y estigma, que dificulta la búsqueda de ayuda. Cuando el entorno no ofrece un espacio seguro para hablar, el silencio se convierte en el mayor factor de riesgo.</p>
+        <p>Como grupo entendemos que hablar de enfermedades de transmisión sexual sin estigma es también un acto profundamente educativo. El silencio no cuida a nadie. Solo prolonga el problema y lo hace más difícil de tratar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 INTERVENCIÓN -->
+<section id="intervencion">
+  <div class="wrap">
+    <div class="sec-label">04 — Propuestas de Intervención</div>
+    <h2 class="sec-title">Lo que la escuela<br>puede —y debe— hacer</h2>
+    <div class="sec-rule"></div>
+    <p class="int-intro">La escuela no es solo un espacio para aprender matemáticas o historia. Es uno de los entornos más influyentes en el desarrollo de los adolescentes, y tiene la capacidad real de marcar una diferencia cuando se trata de sexualidad y toma de decisiones responsables. Estas son las acciones que proponemos.</p>
+
+    <div class="int-grid reveal">
+      <div class="int-card int-teal">
+        <div class="int-icon">📚</div>
+        <h3>Estrategias Pedagógicas</h3>
+        <ul class="int-list">
+          <li>Incluir educación sexual integral en el currículo escolar de forma clara, adecuada a la edad y sin tabúes</li>
+          <li>Explicar las consecuencias reales de las decisiones sexuales sin generar miedo, sino conciencia y responsabilidad</li>
+          <li>Fomentar el respeto al propio cuerpo, el autocuidado y el valor del consentimiento en todas las etapas</li>
+          <li>Crear ambientes de aula donde los estudiantes sientan que pueden preguntar sin ser juzgados</li>
+        </ul>
+      </div>
+      <div class="int-card int-amber">
+        <div class="int-icon">🎯</div>
+        <h3>Actividades de Orientación</h3>
+        <ul class="int-list">
+          <li>Charlas educativas sobre prevención de embarazos y enfermedades de transmisión sexual, con información actualizada y confiable</li>
+          <li>Talleres sobre toma de decisiones, autoestima y cómo manejar la presión social en situaciones de riesgo</li>
+          <li>Espacios seguros donde los estudiantes puedan expresar dudas, miedos y preguntas sin vergüenza ni temor al juicio</li>
+          <li>Dinámicas grupales que promuevan el respeto mutuo y la comunicación abierta entre pares</li>
+        </ul>
+      </div>
+      <div class="int-card int-coral">
+        <div class="int-icon">🤝</div>
+        <h3>Rol del Docente y Orientador</h3>
+        <ul class="int-list">
+          <li>Brindar información confiable, actualizada y presentada sin juicios morales que inhiban la comunicación</li>
+          <li>Escuchar activamente y orientar con empatía cuando un estudiante se acerque con una situación difícil</li>
+          <li>Detectar señales de riesgo en los estudiantes y actuar de forma oportuna antes de que los problemas escalen</li>
+          <li>Articular el trabajo de forma coordinada con la familia para apoyar al adolescente desde todos sus entornos</li>
+        </ul>
+      </div>
+      <div class="int-card int-blue">
+        <div class="int-icon">👨‍👩‍👧</div>
+        <h3>Involucramiento Familiar</h3>
+        <ul class="int-list">
+          <li>Talleres para padres y madres sobre cómo hablar de sexualidad con sus hijos de forma natural y abierta</li>
+          <li>Orientación a las familias sobre la importancia de ser un espacio seguro de conversación para el adolescente</li>
+          <li>Trabajo conjunto entre escuela y familia para reforzar los mismos mensajes en ambos entornos</li>
+          <li>Romper el tabú familiar que convierte el silencio en la respuesta por defecto ante estos temas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CONCLUSIÓN -->
+<section id="conclusion">
+  <div class="wrap">
+    <div class="sec-label">05 — Conclusión</div>
+    <div class="concl-box reveal">
+      <h2>Reflexión Final del Grupo</h2>
+      <p>A lo largo de este portafolio pudimos entender que la sexualidad en la adolescencia no es un tema menor ni un asunto exclusivamente privado: es una dimensión del desarrollo humano que tiene consecuencias reales y que requiere orientación real. El embarazo adolescente, la falta de educación sexual y las enfermedades de transmisión sexual no son problemas que aparezcan de la nada; son el resultado de jóvenes que navegaron solos en un tema donde nadie los acompañó de forma adecuada.</p>
+      <p>Las teorías de Erikson, Bandura, Kohlberg y Piaget nos ofrecen marcos distintos pero complementarios para entender por qué los adolescentes toman las decisiones que toman, qué fuerzas los presionan y qué herramientas necesitan para elegir mejor. No se trata de culparlos: se trata de entenderlos y darles lo que necesitan.</p>
+      <p>Como grupo llegamos a una conclusión que sentimos profundamente: los adolescentes sí tienen la capacidad de tomar buenas decisiones sobre su sexualidad. Pero necesitan información honesta, espacios seguros para preguntar y adultos que no huyan del tema. La escuela puede ser ese espacio. La pregunta es si estamos dispuestos a serlo.</p>
+      <p class="concl-em">"La educación sexual no es darle permiso a los jóvenes para actuar: es darles las herramientas para que sus decisiones sean libres, informadas y responsables."</p>
+      <div class="team-chips">
+        <span class="team-chip">Dawarkis Peralta Feliz</span>
+        <span class="team-chip">Tomily Quezada</span>
+        <span class="team-chip">José Freilys</span>
+        <span class="team-chip">Reynito Encarnación</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 REFERENCIAS -->
+<section id="referencias">
+  <div class="wrap">
+    <div class="sec-label">06 — Bibliografía</div>
+    <h2 class="sec-title">Referencias Bibliográficas</h2>
+    <div class="sec-rule"></div>
+    <p style="font-size:.98rem;color:var(--ink-muted);margin-bottom:2rem">Fuentes académicas en formato APA utilizadas como sustento teórico del portafolio.</p>
+    <ul class="ref-list reveal">
+      <li><span class="ref-author">Bandura, A.</span> (1977). <em>Social Learning Theory.</em> Prentice Hall.</li>
+      <li><span class="ref-author">Erikson, E.</span> (1968). <em>Identity: Youth and Crisis.</em> W. W. Norton &amp; Company.</li>
+      <li><span class="ref-author">Kohlberg, L.</span> (1984). <em>Essays on Moral Development, Vol. II: The Psychology of Moral Development.</em> Harper &amp; Row.</li>
+      <li><span class="ref-author">Piaget, J.</span> (1972). <em>The Psychology of the Child.</em> Basic Books.</li>
+      <li><span class="ref-author">Papalia, D. E., Olds, S. W., &amp; Feldman, R. D.</span> (2009). <em>Psicología del desarrollo.</em> McGraw-Hill.</li>
+      <li><span class="ref-author">Organización Mundial de la Salud (OMS).</span> (2020). <em>Salud de los adolescentes: Temas de salud.</em> https://www.who.int/es/health-topics/adolescent-health</li>
+      <li><span class="ref-author">UNFPA.</span> (2022). <em>Embarazo en adolescentes en América Latina y el Caribe.</em> Fondo de Población de las Naciones Unidas.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Sexualidad en la Adolescencia: Decisiones, Riesgos y Orientación Consciente</strong><br>
+  Portafolio Digital · Psicología del Desarrollo Adolescente<br>
+  Dawarkis Peralta Feliz &nbsp;·&nbsp; Tomily Quezada &nbsp;·&nbsp; José Freilys &nbsp;·&nbsp; Reynito Encarnación
+</footer>
+
+<script>
+  // Tab logic
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => obs.observe(el));
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+    navAs.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur
+        ? 'var(--mint)' : '';
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
